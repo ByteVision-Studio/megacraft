@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MegaCraft | Login und Regestrieren</title>
+  <link rel="icon" href="Bilder/Logo/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      background-color: #2c2c2c;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #4caf50;
+    }
+
+    .logo {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 16px;
+      color: #4caf50;
+      text-shadow: 1px 1px 0 white;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #4caf50;
+    }
+
+    .nav-links a.active {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    /* Formular Container */
+    .form-container {
+      background-color: #2e2e2e;
+      border: 3px solid #2e7d32;
+      box-shadow: 4px 4px 0 #000;
+      padding: 40px;
+      width: 500px;
+      max-width: 90%;
+      margin-left: 38%;
+      margin-top: 300px;
+    }
+
+    /* Überschrift */
+    h2 {
+      text-align: center;
+      color: #4caf50;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 0 #000;
+    }
+
+    /* Labels */
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    /* Input-Felder */
+    input {
+      width: 100%;
+      padding: 10px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* Minecraft-Button */
+    .minecraft-button {
+      display: block;
+      margin: 20px auto 10px;
+      padding: 12px 24px;
+      background-color: #4caf50;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      text-decoration: none;
+      border: 3px solid #2e7d32;
+      box-shadow: 4px 4px 0 #000;
+      transition: transform 0.1s, box-shadow 0.1s;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Hover-Effekt für Button */
+    .minecraft-button:hover {
+      background-color: #66bb6a;
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #000;
+    }
+
+    /* Link zum Umschalten zwischen Login und Registrierung */
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 10px;
+      color: #aaa;
+      cursor: pointer;
+      text-decoration: underline;
+      text-align: center;
+    }
+
+    /* Fehlermeldungen */
+    .error-message {
+      color: #ff4444;
+      font-size: 10px;
+      margin-top: 5px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #minecraft-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4caf50;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      text-decoration: none;
+      border: 3px solid #2e7d32;
+      box-shadow: 4px 4px 0 #000;
+      transition: transform 0.1s, box-shadow 0.1s;
+      cursor: pointer;
+    }
+
+    #minecraft-button:hover {
+      background-color: #66bb6a;
+      box-shadow: 2px 2px 0 #000;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <span>MegaCraft</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Startseite</a>
+      <a href="downloads.html">Projekte & Downloads</a>
+      <a href="anmelden.html" class="active">Login/Registration</a>
+      <a href="dashboard.html">User</a>
+    </nav>
+  </header>
+  <div class="form-container">
+    <form id="auth-form" action="dashboard.html" method="GET">
+      <h2 id="form-title">Login</h2>
+
+      <div id="email-field" style="display: none">
+        <label for="email">E-Mail-Adresse:</label>
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <div>
+        <label for="username">Benutzername:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+
+      <div>
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <div id="confirm-password-field" style="display: none">
+        <label for="confirm-password">Passwort bestätigen:</label>
+        <input type="password" id="confirm-password" name="confirm-password" />
+      </div>
+
+      <p id="error-message" class="error-message"></p>
+
+      <div class="button-container">
+        <button type="submit" class="minecraft-button">Anmelden</button>
+      </div>
+      <div class="button-container">
+      <p>
+        <a href="#" class="toggle-link">Noch keinen Account? Jetzt registrieren!</a>
+      </p>
+    </div>
+
+    </form>
+    <script>
+      const formTitle = document.getElementById("form-title");
+      const authForm = document.getElementById("auth-form");
+      const toggleLink = document.querySelector(".toggle-link");
+      const emailField = document.getElementById("email-field");
+      const confirmPasswordField = document.getElementById("confirm-password-field");
+      const submitButton = document.getElementById("submit-button");
+      const errorMessage = document.getElementById("error-message");
+
+      let isLogin = true;
+
+      function toggleForm() {
+        isLogin = !isLogin;
+
+        if (isLogin) {
+          formTitle.textContent = "Login";
+          emailField.style.display = "none";
+          confirmPasswordField.style.display = "none";
+          submitButton.textContent = "Anmelden";
+          toggleLink.textContent = "Noch keinen Account? Jetzt registrieren!";
+          authForm.setAttribute("action", "index.html");
+        } else {
+          formTitle.textContent = "Registrieren";
+          emailField.style.display = "block";
+          confirmPasswordField.style.display = "block";
+          submitButton.textContent = "Registrieren";
+          toggleLink.textContent = "Schon registriert? Jetzt anmelden!";
+          authForm.removeAttribute("action"); // Deaktiviert Weiterleitung für Registrierung
+        }
+
+        errorMessage.textContent = "";
+        authForm.reset();
+      }
+
+      function isValidPassword(pw) {
+        return (
+          pw.length >= 8 &&
+          /[a-z]/.test(pw) &&
+          /[A-Z]/.test(pw) &&
+          /[0-9]/.test(pw) &&
+          /[^A-Za-z0-9]/.test(pw)
+        );
+      }
+
+      authForm.addEventListener("submit", function (e) {
+        const email = document.getElementById("email").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        // Registrierung
+        if (!isLogin) {
+          e.preventDefault(); // Verhindert Weiterleitung bei Fehlern
+
+          if (!username || !email || !password || !confirmPassword) {
+            errorMessage.textContent = "Bitte alle Felder ausfüllen.";
+            return;
+          }
+
+          if (!isValidPassword(password)) {
+            errorMessage.textContent =
+              "Passwort zu schwach (Groß-/Kleinbuchst., Zahl, Zeichen, min. 8 Zeichen)";
+            return;
+          }
+
+          if (password !== confirmPassword) {
+            errorMessage.textContent = "Passwörter stimmen nicht überein.";
+            return;
+          }
+
+          if (localStorage.getItem(`user_${username}`)) {
+            errorMessage.textContent = "Benutzername existiert bereits.";
+            return;
+          }
+
+          const userData = { email, username, password };
+          localStorage.setItem(`user_${username}`, JSON.stringify(userData));
+          toggleForm();
+          return;
+        }
+
+        // Login
+        if (isLogin) {
+          e.preventDefault(); // Wir prüfen erst, ob alles passt
+
+          if (!username || !password) {
+            errorMessage.textContent = "Bitte Benutzername und Passwort eingeben.";
+            return;
+          }
+
+          const user = localStorage.getItem(`user_${username}`);
+          if (!user) {
+            errorMessage.textContent = "Benutzer existiert nicht.";
+            return;
+          }
+
+          const parsedUser = JSON.parse(user);
+
+          if (parsedUser.password !== password) {
+            errorMessage.textContent = "Falsches Passwort.";
+            return;
+          }
+
+          // Login erfolgreich → jetzt Formular wirklich absenden
+          localStorage.setItem("loggedInUser", username);
+          authForm.submit();
+        }
+      });
+
+      toggleLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleForm();
+      });
+    </script>
+
+</body>
+
+</html>

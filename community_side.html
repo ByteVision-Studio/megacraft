@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>🔥 MEGA COMMUNITY 🔥</title>
+    <style>
+        :root {
+            --green: #4caf50;
+            --dark-green: #2e7d32;
+            --black: #000;
+            --gray: #888;
+            --neon: #00f7ff;
+            --pinky: #ff66cc;
+            --bg: #2e2e2e;
+            --white: #fff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--white);
+            font-family: 'Press Start 2P';
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--green);
+            text-shadow: 2px 2px 0 var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--green);
+            box-shadow: 2px 2px 0 var(--black);
+            margin-bottom: 10px;
+        }
+
+        .status {
+            color: var(--green);
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        .friend-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            border: 2px solid var(--dark-green);
+            box-shadow: 2px 2px 0 var(--black);
+            border-radius: 50%;
+        }
+
+        .feed {
+            margin-top: 40px;
+            background-color: #383838;
+            padding: 20px;
+            border: 3px solid var(--dark-green);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+
+        .post {
+            background-color: #4b4b4b;
+            padding: 15px;
+            margin-top: 10px;
+            border: 2px solid var(--black);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .post .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .post .user img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid var(--green);
+        }
+
+        .chatbox {
+            background-color: #3c3c3c;
+            padding: 15px;
+            border: 3px solid var(--dark-green);
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            box-shadow: 4px 4px 0 var(--black);
+        }
+
+        .chatbox div {
+            margin-bottom: 10px;
+            background: #555;
+            padding: 10px;
+            border: 2px solid var(--black);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            font-family: 'Press Start 2P';
+            font-size: 10px;
+            border: 2px solid var(--black);
+            background-color: var(--white);
+            color: var(--black);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .chat-input button {
+            background-color: var(--green);
+            color: var(--white);
+            font-family: 'Press Start 2P', cursive;
+            border: 3px solid var(--dark-green);
+            box-shadow: 4px 4px 0 var(--black);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .chat-input button:hover {
+            background-color: #66bb6a;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .friend-search input {
+            width: 100%;
+            padding: 10px;
+            font-size: 10px;
+            font-family: 'Press Start 2P', cursive;
+            border: 2px solid var(--black);
+            background-color: var(--white);
+            color: var(--black);
+            box-shadow: 2px 2px 0 var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .friend-card {
+            background-color: #444;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid var(--black);
+            box-shadow: 2px 2px 0 var(--black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            background-color: var(--green);
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            border: 3px solid var(--dark-green);
+            box-shadow: 3px 3px 0 var(--black);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #66bb6a;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .extra-buttons button {
+            margin: 0.5rem;
+            padding: 12px 18px;
+            background-color: #7e57c2;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            border: 3px solid #512da8;
+            box-shadow: 4px 4px 0 var(--black);
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .extra-buttons button:hover {
+            background-color: #9575cd;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="text-center">
+        <img src="" alt="Profilbild" class="rounded-full profile-pic" />
+        <h2 style="margin-top: 0.5rem;">Willkommen, {{username}}!</h2>
+        <p class="status">🔥 Online</p>
+
+        <div class="friend-icons">
+            <img src="" />
+            <img src="" />
+            <img src="" />
+        </div>
+    </section>
+
+    <section class="feed">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.5rem;">🌍 Community Feed</h2>
+            <button class="btn">Post erstellen</button>
+        </div>
+
+        <div class="post">
+            <div class="user">
+                <img src="" class="rounded-full" />
+                <span>{{username}}</span>
+            </div>
+            <p>Hey Leute! 👋 Willkommen in der Mega Community! 💬</p>
+            <div style="display: flex; gap: 1rem; color: var(--pinky);">
+                <button>❤️ 23 Likes</button>
+                <button>💬 5 Kommentare</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">💬 Echtzeit-Chat</h2>
+        <div class="chatbox">
+            <div>
+                <span style="color: var(--neon);">Lisa</span> <span
+                    style="color: var(--gray); font-size: 0.8rem;">[10:45]</span>
+                <p>Hey, seid ihr auch online?</p>
+            </div>
+            <div>
+                <span style="color: var(--pinky);">Max</span> <span
+                    style="color: var(--gray); font-size: 0.8rem;">[10:46]</span>
+                <p>Yes! 😎</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Nachricht eingeben..." />
+            <button>Senden</button>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">👥 Freunde hinzufügen</h2>
+        <div class="friend-search">
+            <input type="text" placeholder="Benutzer suchen..." />
+        </div>
+        <div class="friend-card">
+            <span>{{user1}}</span>
+            <button class="btn">Freund hinzufügen</button>
+        </div>
+        <div class="friend-card">
+            <span>{{user2}}</span>
+            <button class="btn">Freund hinzufügen</button>
+        </div>
+    </section>
+
+    <section class="text-center">
+        <h2 style="font-size: 1.5rem;">🎮 Extras</h2>
+        <div class="extra-buttons" style="margin-top: 1rem;">
+            <button>📸 Meme-Generator</button>
+            <button>🎭 Avatar-Editor</button>
+            <button>🗳️ Umfrage starten</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = localStorage.getItem("username");
+
+            // Wenn kein Username gespeichert ist → zurück zur anmelden-Seite
+            if (!username) {
+                window.location.href = "anmelden.html";
+                return;
+            }
+
+            // Benutzername überall einsetzen
+            document.body.innerHTML = document.body.innerHTML.replaceAll("{{username}}", username);
+            document.body.innerHTML = document.body.innerHTML.replaceAll("{{user1}}", "Steve");
+            document.body.innerHTML = document.body.innerHTML.replaceAll("{{user2}}", "CreeperFan99");
+
+            // Optional: Dummy-Profilbild einsetzen (du kannst das mit echten Daten ersetzen)
+            const profilePic = document.querySelector(".profile-pic");
+            if (profilePic) profilePic.src = "#" + username;
+
+            // Chat senden
+            const sendBtn = document.querySelector(".chat-input button");
+            const chatInput = document.querySelector(".chat-input input");
+            const chatbox = document.querySelector(".chatbox");
+
+            if (sendBtn && chatInput && chatbox) {
+                sendBtn.addEventListener("click", () => {
+                    const msg = chatInput.value.trim();
+                    if (!msg) return;
+
+                    const now = new Date();
+                    const time = `[${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}]`;
+
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+        <span style="color: var(--neon);">${username}</span> 
+        <span style="color: var(--gray); font-size: 0.8rem;">${time}</span>
+        <p>${msg}</p>
+      `;
+                    chatbox.appendChild(div);
+                    chatInput.value = "";
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
